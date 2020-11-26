@@ -3,9 +3,11 @@ import React from 'react';
 
 class CommentItem extends React.Component {
 
-    static defaultProps = {
-        comment: {}
-    }
+    // static defaultProps = {
+    //     comment: PropTypes.object.isRequired,
+    //     onDelete: PropTypes.func,
+    //     index: PropTypes.number
+    // }
 
     constructor() {
         super()
@@ -20,6 +22,10 @@ class CommentItem extends React.Component {
         this.timer = setInterval(this.updateTimeString.bind(this), 5000);
     }
 
+    componentWillUnmount() {
+        clearInterval(this.timer)
+    }
+
     updateTimeString() {
         const { createdTime } = this.props.comment;
         const duration = (+Date.now() - createdTime) / 1000;
@@ -30,6 +36,10 @@ class CommentItem extends React.Component {
         });
     }
 
+    handleDelete() {
+        this.props.onDelete && this.props.onDelete(this.props.index);
+    }
+
     render() {
         // console.log('===Comment Item===', this.props);
         const { username, content } = this.props.comment;
@@ -38,6 +48,7 @@ class CommentItem extends React.Component {
                 <div className="list-username">{username}</div>
                 <div className="list-content">{content}</div>
                 <div className="list-time">{this.state.timeString}</div>
+                <div className="list-del" onClick={this.handleDelete.bind(this)}>删除</div>
             </div>
         )
     }

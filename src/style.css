@@ -33,3 +33,8 @@
 .list-time {
   margin-left: 20px;
 }
+.list-del {
+    margin-left: 20px;
+    color: blue;
+    cursor: pointer;
+}

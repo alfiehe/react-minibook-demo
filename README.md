@@ -10,30 +10,10 @@ npm start
 ```
 
 
-## Tasks
+## 需求
 
-- 页面加载后`Content`输入框自动聚焦
-- 用户名LocalStorage
-
----
-
-### 评论 `Storage`
-
-表单提交时缓存 Storage
-```js
-handleSubmitComment() {
-    localStorage.setItem('comments', JSON.stringify(this.state.comments));
-}
-```
-组件挂载时加载Storage
-```js
-componentWillMount() {
-    const comments = localStorage.getItem('comments');
-    comments && this.setState({ comments: JSON.parse(comments) });
-}
-```
-
-### 评论发布时间
-
-- 创建时间 `+new Date()`
-- 获取当前时间 `+Date.now()`
+- 页面加载后，评论输入框自动获取输入焦点
+- 用户名Storage缓存
+- 评论列表Storage缓存
+- 单条评论显示多久前时间创建，每隔5妙自动刷新时间
+- 删除单条评论
