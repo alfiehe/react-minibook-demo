@@ -27,3 +27,9 @@
     color: blue;
     margin-right: 10px;
 }
+.list-content {
+  flex: 1
+}
+.list-time {
+  margin-left: 20px;
+}

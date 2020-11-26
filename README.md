@@ -32,3 +32,8 @@ componentWillMount() {
     comments && this.setState({ comments: JSON.parse(comments) });
 }
 ```
+
+### 评论发布时间
+
+- 创建时间 `+new Date()`
+- 获取当前时间 `+Date.now()`

@@ -18,6 +18,7 @@ class CommentApp extends React.Component {
 
     // 接收 CommentInput 提交内容
     handleSubmitComment = (comment) => {
+      console.log('===handleSubmitComment===', comment);
         // 校验是否填入内容
         if (!comment) { return };
         if (!comment.username) { return alert('请输入用户名') }

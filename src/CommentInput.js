@@ -33,7 +33,11 @@ class CommentApp extends React.Component {
     handleSubmit = () => {
         const { username, content } = this.state;
         // 向父组件传递数据
-        this.props.onSubmit && this.props.onSubmit({ username, content });
+        this.props.onSubmit && this.props.onSubmit({ 
+          username, 
+          content,
+          createdTime: +new Date()
+        });
         // 清空content输入框内容
         this.setState({
             content: ''
