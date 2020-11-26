@@ -34,7 +34,7 @@ class CommentApp extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="wrap">
                 <CommentInput
                     onSubmit={this.handleSubmitComment}
                 />

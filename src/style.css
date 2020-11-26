@@ -1,0 +1,29 @@
+.wrap {
+    padding: 15px;
+}
+.form-row {
+    display: flex;
+    margin-bottom: 20px;
+}
+.form-label {
+    width: 100px;
+}
+.form-input {
+    flex: 1;
+    padding: 5px 15px;
+}
+.form-submit {
+    display: block;
+    width: 100%;
+    height: 40px;
+}
+.list-item {
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.list-username {
+    color: blue;
+    margin-right: 10px;
+}

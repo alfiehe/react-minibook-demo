@@ -9,7 +9,7 @@ class CommentList extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="list">
                 {
                     this.props.data.map((item, index) => {
                         return <CommentItem key={index} comment={item} />;

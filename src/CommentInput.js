@@ -43,22 +43,30 @@ class CommentApp extends React.Component {
     render() {
 
         return (
-            <div>
-                Username：<br />
-                <input
-                    value={this.state.username}
-                    onChange={this.handleChangeUsername}
-                    onBlur={e => {
-                        console.log('===onBlur===', e.target.value);
-                        localStorage.setItem('username', e.target.value);
-                    }}
-                /><br />
-                Content：<br />
-                <textarea
-                    ref={e => this.textarea = e}
-                    value={this.state.content}
-                    onChange={this.handleChangeContent} /><br />
-                <button onClick={this.handleSubmit} >Submit</button>
+            <div className="form">
+                <div className="form-row">
+                    <label className="form-label">Username</label>
+                    <input
+                        value={this.state.username}
+                        onChange={this.handleChangeUsername}
+                        className="form-input"
+                        onBlur={e => {
+                            console.log('===onBlur===', e.target.value);
+                            localStorage.setItem('username', e.target.value);
+                        }}
+                    />
+                </div>
+                <div className="form-row">
+                    <label className="form-label">Content</label>
+                    <textarea
+                        ref={e => this.textarea = e}
+                        value={this.state.content}
+                        className="form-input"
+                        onChange={this.handleChangeContent} /><br />
+                </div>
+                <div className="form-row">
+                    <button onClick={this.handleSubmit} className="form-submit">Submit</button>
+                </div>
             </div>
         )
     }
